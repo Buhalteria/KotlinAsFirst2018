@@ -1,6 +1,8 @@
 @file:Suppress("Курхули Альберт группа 13531/4")
+
 package lesson1.task1
 
+import java.lang.Math.pow
 import kotlin.math.*
 
 /**
@@ -83,7 +85,7 @@ fun angleInRadian(grad: Int, min: Int, sec: Int): Double = PI / 180 * (grad + mi
  * Найти длину отрезка, соединяющего точки на плоскости с координатами (x1, y1) и (x2, y2).
  * Например, расстояние между (3, 0) и (0, 4) равно 5
  */
-fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = sqr (x1 - x2) + sqr (y1 - y2)
+fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = sqr(x1 - x2) + sqr(y1 - y2)
 
 /**
  * Простая
@@ -100,7 +102,7 @@ fun thirdDigit(number: Int): Int = (number / 100) % 10
  * прибыл на станцию назначения в h2 часов m2 минут того же дня (например в 13:01).
  * Определите время поезда в пути в минутах (в данном случае 216).
  */
-fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minutesArrive: Int): Int = TODO()
+fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minutesArrive: Int): Int = (hoursArrive - hoursDepart) * 60 + minutesArrive - minutesDepart
 
 /**
  * Простая
@@ -109,12 +111,12 @@ fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minute
  * Сколько денег будет на счету через 3 года (с учётом сложных процентов)?
  * Например, 100 рублей под 10% годовых превратятся в 133.1 рубля
  */
-fun accountInThreeYears(initial: Int, percent: Int): Double = TODO()
+fun accountInThreeYears(initial: Int, percent: Int): Double = initial * pow(((100 + percent).toDouble()), 3.0) / pow(100.0, 3.0)
 
 /**
- * Простая
+ * Простая1
  *
  * Пользователь задает целое трехзначное число (например, 478).
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
-fun numberRevert(number: Int): Int = TODO()
+fun numberRevert(number: Int): Int = number % 10 * 100 + (number / 10) % 10 * 10 + (number / 100) % 10
